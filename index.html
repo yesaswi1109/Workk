@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yesaswi Narayani - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* --- 1. Global Styles and Reset --- */
+        :root {
+            --primary-color: #2563EB; /* Blue-600 */
+            --secondary-color: #E0F2FE; /* Blue-50 for lighter background elements */
+            --text-dark: #1E293B; /* Slate-800 */
+            --text-light: #475569; /* Slate-600 */
+            --background-light: #F8FAFC; /* Slate-50 */
+            --white: #FFFFFF;
+            --border-color: #E2E8F0; /* Slate-200 */
+            --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s var(--timing-function);
+        }
+
+        a:hover {
+            color: var(--text-dark);
+        }
+
+        h2, h3, h4, h5 {
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- 2. Header and Navigation --- */
+        .header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-list a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s var(--timing-function);
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a.active::after {
+            width: 100%;
+        }
+
+        /* --- 3. Hero Section --- */
+        .hero-section {
+            background-color: var(--background-light);
+            padding: 6rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .hero-title span:first-child {
+            display: block;
+            color: var(--text-dark);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 2px solid transparent;
+            transition: all 0.3s var(--timing-function);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--text-dark);
+            border-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s var(--timing-function);
+        }
+
+        .social-icons a:hover {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+
+        /* --- 4. Common Section Styles --- */
+        .common-section {
+            padding: 5rem 0;
+        }
+
+        .common-section h3, .common-section h4 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .common-section h3::after, .common-section h4::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-paragraph {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* --- 5. Projects Section --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s var(--timing-function), box-shadow 0.3s var(--timing-function);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--secondary-color); /* Add background for placeholder */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
+        .project-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(37, 99, 235, 0.85); /* Primary color with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s var(--timing-function);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .overlay-icon {
+            color: var(--white);
+            border: 2px solid var(--white);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            text-align: left;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-content ul {
+            margin-left: 1.25rem;
+            list-style: disc;
+            margin-bottom: 1rem;
+        }
+
+        .project-content li {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-light);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags span {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.3rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* --- 6. Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s var(--timing-function);
+        }
+
+        .skill-card:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .skill-icon-wrapper {
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .skill-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .skill-card h5 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-card p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* --- 7. Certifications Section --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--background-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-icon-wrapper {
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .cert-icon {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .cert-content h5 {
+            font-size: 1.05rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .cert-content p {
+            font-size: 0.9rem;
+        }
+
+        /* --- 8. Education and Journey Sections (Timeline Style) --- */
+        .journey-item, .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-item h5 {
+            font-size: 1.35rem;
+            text-align: left;
+            margin-bottom: 0.25rem;
+        }
+
+        .journey-item .meta {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .journey-item ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+        }
+
+        .journey-item li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Education Timeline Specifics */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.1rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            margin-left: 1.5rem;
+        }
+
+        .timeline-content h5 {
+            font-size: 1.25rem;
+            text-align: left;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+
+        /* --- 9. Contact Section --- */
+        .contact-section {
+            background-color: var(--background-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 0.25rem;
+            left: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            transition: all 0.2s ease-out;
+        }
+
+        .form-input:placeholder-shown ~ .form-label {
+            opacity: 0;
+        }
+
+        /* Ensure label is visible for non-empty or focused fields */
+        .form-input:not(:placeholder-shown) ~ .form-label,
+        .form-input:focus ~ .form-label {
+            top: 0.25rem;
+            left: 1rem;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            opacity: 1;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+        }
+
+        /* --- 10. Footer --- */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- 11. Media Queries for Responsiveness --- */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-list {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-section {
+                padding: 4rem 0;
+            }
+            
+            .hero-title {
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+
+            .common-section {
+                padding: 3rem 0;
+            }
+            
+            .common-section h3, .common-section h4 {
+                margin-bottom: 2rem;
+                font-size: 1.75rem;
+            }
+
+            .project-grid, .skills-grid, .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-dot {
+                left: 0.5rem;
+            }
+
+            .timeline-content {
+                margin-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#home" class="logo">Yesaswi Narayani.P</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#journey">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    <span>YESASWI</span>
+                    <span>NARAYANI</span>
+                </h2>
+                <p class="tagline">#CyberSecurity #FullStackDevelopment #AIEnthusiast</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Yesaswi_Resume_Updated.pdf" download class="btn btn-secondary">Download Resume</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    <a href="mailto:yesaswi1109@gmail.com" aria-label="Email"><i data-feather="mail"></i></a>
+                    <a href="tel:7305886680" aria-label="Phone"><i data-feather="phone"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="common-section">
+            <div class="container">
+                <h3>About Me</h3>
+                <p class="about-paragraph">
+                    Innovative and solution-driven final year student in Computer Science & Engineering with a strong foundation in programming and software development. [cite_start]Proficient in **Python**, **C**, **SQL** [cite: 37][cite_start], and modern web frameworks like **Next.js** and **Typescript**[cite: 15, 38]. [cite_start]Adept at problem-solving, exploring new ideas, and leveraging a solid understanding of fundamental concepts to drive technological advancement[cite: 40]. [cite_start]Enthusiastic about cybersecurity, proven by experience in **vulnerability assessments**, **penetration testing**, and **incident response protocols**[cite: 7, 9, 10].
+                </p>
+            </div>
+        </section>
+        
+        <section id="journey" class="common-section">
+            <div class="container">
+                <h4>Professional Journey 💼</h4>
+                <div class="journey-items">
+                    <div class="journey-item">
+                        <h5>Cyber Security Virtual Internship - Eduskills</h5>
+                        [cite_start]<p class="meta">Oct 2024 - Dec 2024 [cite: 5, 6]</p>
+                        <ul>
+                            [cite_start]<li>Conducted comprehensive **vulnerability assessments** to identify security gaps and implemented remediation strategies[cite: 7].</li>
+                            [cite_start]<li>Executed **penetration testing** to assess system resilience and enhance defensive cybersecurity measures[cite: 9].</li>
+                            [cite_start]<li>Strengthened knowledge of **incident response protocols** by analyzing real-world attack scenarios and deploying countermeasures[cite: 10].</li>
+                            [cite_start]<li>Contributed to a **red team exercise**, successfully bypassing simulated defense to uncover critical vulnerabilities, leading to a **20% improvement in network security protocols**[cite: 12].</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="common-section projects-section">
+            <div class="container">
+                <h3>Featured Projects ✨</h3>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            Bookmood Project Preview (NLP/Next.js)
+                            <div class="project-overlay">
+                                <a href="#" class="overlay-icon" aria-label="View Project"><i data-feather="link"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            [cite_start]<h4>Bookmood: AI-Powered Book Recommendation Platform [cite: 14]</h4>
+                            <p class="project-desc">
+                                [cite_start]A full-stack web application developed using Next.js and Typescript to provide book recommendations based on user mood analysis[cite: 15].
+                            </p>
+                            <ul>
+                                [cite_start]<li>Created a custom **NLP engine** to process user input and a recommendation algorithm[cite: 16].</li>
+                                [cite_start]<li>Designed and implemented a responsive, interactive user interface[cite: 17].</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>Next.js</span><span>Typescript</span><span>NLP</span><span>Backend Development</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#">Live Demo</a>
+                                [cite_start]<a href="#" target="_blank" rel="noopener noreferrer">View in GitHub [cite: 14]</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            Harry Potter Quiz Preview (Python/Pygame)
+                            <div class="project-overlay">
+                                <a href="#" class="overlay-icon" aria-label="View Project"><i data-feather="link"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            [cite_start]<h4>Harry Potter Trivia Quiz Game [cite: 18]</h4>
+                            <p class="project-desc">
+                                [cite_start]An interactive quiz game developed using Python, featuring multiple-choice questions on Harry Potter lore[cite: 19].
+                            </p>
+                            <ul>
+                                [cite_start]<li>Implemented game logic to track user scores and manage question flow[cite: 20].</li>
+                                [cite_start]<li>Utilized **JSON files** to dynamically load questions and save high scores[cite: 22].</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span>Python</span><span>Pygame</span><span>JSON</span><span>Game Logic</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#">Live Demo</a>
+                                [cite_start]<a href="#" target="_blank" rel="noopener noreferrer">View in GitHub [cite: 18]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="common-section skills-section">
+            <div class="container">
+                <h3>My Key Skills 🛠️</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="code" class="skill-icon"></i></div><h5>Python | C | JavaScript</h5><p>Proficient in foundational and object-oriented programming.</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="terminal" class="skill-icon"></i></div><h5>Bash | [cite_start]Scripting</h5><p>Competent in automation and command-line interfaces[cite: 39].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="lock" class="skill-icon"></i></div><h5>Cybersecurity | [cite_start]Cryptography</h5><p>Experience with pentesting, vulnerability assessment, and security principles[cite: 7, 9, 39].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="cloud" class="skill-icon"></i></div><h5>AWS | [cite_start]Cloud</h5><p>Familiar with Amazon Web Services and cloud fundamentals[cite: 24, 37].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="database" class="skill-icon"></i></div><h5>SQL | [cite_start]Backend Dev</h5><p>Experienced in database querying and backend implementation (FastAPI, NodeJS)[cite: 37, 38].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="cpu" class="skill-icon"></i></div><h5>NLP | [cite_start]Pytorch</h5><p>Experience with Natural Language Processing and Deep Learning framework[cite: 16, 25, 37].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="git-branch" class="skill-icon"></i></div><h5>Git | [cite_start]GitHub Actions</h5><p>Experienced in version control and automation workflows[cite: 37].</p></div>
+                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="users" class="skill-icon"></i></div><h5>Leadership | [cite_start]Teamwork</h5><p>Strong soft skills including Problem Solving, Adaptability, and Project Management[cite: 39, 40].</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="common-section certifications-section">
+            <div class="container">
+                <h3>Certifications 🏅</h3>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper"><i data-feather="cloud-lightning" class="cert-icon"></i></div>
+                        <div class="cert-content">
+                            [cite_start]<h5>AWS Cloud Foundations [cite: 24]</h5>
+                            <p>AWS Academy</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper"><i data-feather="message-square" class="cert-icon"></i></div>
+                        <div class="cert-content">
+                            [cite_start]<h5>Introduction to Natural Language Processing (NLP) [cite: 25]</h5>
+                            <p>Great Learning</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper"><i data-feather="cpu" class="cert-icon"></i></div>
+                        <div class="cert-content">
+                            [cite_start]<h5>Accenture Software Engineering Virtual Experience Program [cite: 26]</h5>
+                            <p>Forage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="common-section">
+            <div class="container">
+                <h4>Education Timeline 🎓</h4>
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            [cite_start]<h5>Bachelor of Technology - Computer Science & Engineering [cite: 29]</h5>
+                            [cite_start]<p class="meta">Raghu Institute of Technology, Visakhapatnam [cite: 30] | [cite_start]Jun 2022 - April 2026 [cite: 29]</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            [cite_start]<h5>Board of Intermediate Education - MPC [cite: 31]</h5>
+                            [cite_start]<p class="meta">Apex Junior College, Vizianagaram [cite: 32] | [cite_start]July 2020 - May 2022 [cite: 31]</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            [cite_start]<h5>CBSE (Central Board of Secondary Education) [cite: 33]</h5>
+                            [cite_start]<p class="meta">Sister Stanislas Memorial English medium School, Kurnool [cite: 35] | [cite_start]July 2019 - March 2020 [cite: 34]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="common-section contact-section">
+            <div class="container">
+                <h3>Get In Touch 👋</h3>
+                <p class="contact-subtitle">Have a question or want to work together? Let's connect.</p>
+                <form action="#" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder=" " value="yesaswi1109@gmail.com" required>
+                        <label for="email" class="form-label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" class="form-input" placeholder=" " required></textarea>
+                        <label for="message" class="form-label">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yesaswi Narayani. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

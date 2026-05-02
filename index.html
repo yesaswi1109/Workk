@@ -13,7 +13,7 @@
         /* --- 1. Global Styles and Reset --- */
         :root {
             --primary-color: #2563EB; /* Blue-600 */
-            --secondary-color: #E0F2FE; /* Blue-50 for lighter background elements */
+            --secondary-color: #E0F2FE; /* Blue-50 */
             --text-dark: #1E293B; /* Slate-800 */
             --text-light: #475569; /* Slate-600 */
             --background-light: #F8FAFC; /* Slate-50 */
@@ -22,11 +22,7 @@
             --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -36,31 +32,13 @@
             scroll-behavior: smooth;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: color 0.3s var(--timing-function);
-        }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s var(--timing-function); }
+        a:hover { color: var(--text-dark); }
 
-        a:hover {
-            color: var(--text-dark);
-        }
+        h2, h3, h4, h5 { color: var(--text-dark); font-weight: 700; margin-bottom: 0.5rem; }
+        ul { list-style: none; }
 
-        h2, h3, h4, h5 {
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
         /* --- 2. Header and Navigation --- */
         .header {
@@ -79,582 +57,69 @@
             padding: 1rem 1.5rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-dark);
-        }
-
-        .nav-list {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-list a {
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.5rem 0;
-            position: relative;
-            color: var(--text-dark);
-        }
-
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); }
+        .nav-list { display: flex; gap: 1.5rem; }
+        .nav-list a { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); position: relative; }
         .nav-list a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s var(--timing-function);
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background-color: var(--primary-color); transition: width 0.3s var(--timing-function);
         }
-
-        .nav-list a:hover::after,
-        .nav-list a.active::after {
-            width: 100%;
-        }
+        .nav-list a:hover::after { width: 100%; }
 
         /* --- 3. Hero Section --- */
-        .hero-section {
-            background-color: var(--background-light);
-            padding: 6rem 0;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
+        .hero-section { background-color: var(--background-light); padding: 6rem 0; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 1rem; color: var(--primary-color); text-transform: uppercase; font-weight: 800; }
+        .hero-title span:first-child { display: block; color: var(--text-dark); }
+        .tagline { font-size: 1.25rem; color: var(--text-light); margin-bottom: 2rem; font-weight: 600; }
+        .hero-buttons { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+
+        .btn { padding: 0.75rem 1.75rem; border-radius: 0.5rem; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; border: 2px solid transparent; transition: all 0.3s var(--timing-function); cursor: pointer; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white); border-color: var(--primary-color); }
+        .btn-primary:hover { background-color: var(--text-dark); border-color: var(--text-dark); }
+        .btn-secondary { background-color: transparent; color: var(--primary-color); border-color: var(--primary-color); }
+        .btn-secondary:hover { background-color: var(--primary-color); color: var(--white); }
+
+        .social-icons { display: flex; justify-content: center; gap: 1.5rem; }
+        .social-icons a { color: var(--text-light); width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border-color); transition: all 0.3s; }
+        .social-icons a:hover { color: var(--white); background-color: var(--primary-color); border-color: var(--primary-color); }
+
+        /* --- 4. Content Sections --- */
+        .common-section { padding: 5rem 0; }
+        .common-section h3, .common-section h4 { text-align: center; margin-bottom: 3rem; font-size: 2.25rem; position: relative; }
+        .common-section h3::after, .common-section h4::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--primary-color); margin: 0.75rem auto 0; border-radius: 2px; }
+
+        .about-paragraph { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem; line-height: 1.8; }
+
+        /* Projects */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .project-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .project-content { padding: 2rem; }
+        .project-content h4 { text-align: left; font-size: 1.4rem; margin-bottom: 1rem; }
+        .project-content h4::after { display: none; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+        .tech-tags span { background: var(--secondary-color); color: var(--primary-color); padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; }
+
+        /* Journey/Experience */
+        .journey-container { max-width: 900px; margin: 0 auto; }
+        .journey-card { background: var(--background-light); padding: 2rem; border-radius: 1rem; border-left: 6px solid var(--primary-color); margin-bottom: 2rem; }
+        .journey-card h5 { font-size: 1.3rem; }
+        .journey-card .meta { color: var(--primary-color); font-weight: 700; margin-bottom: 1rem; display: block; }
+        .journey-card ul { list-style: disc; padding-left: 1.5rem; }
+        .journey-card li { margin-bottom: 0.75rem; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .skill-item { background: var(--white); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 0.75rem; text-align: center; transition: 0.3s; }
+        .skill-item:hover { border-color: var(--primary-color); background: var(--secondary-color); }
+        .skill-item i { color: var(--primary-color); margin-bottom: 1rem; }
+
+        /* Footer */
+        .footer { background: var(--text-dark); color: var(--white); padding: 3rem 0; text-align: center; }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-
-        .hero-title span:first-child {
-            display: block;
-            color: var(--text-dark);
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 600;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            border: 2px solid transparent;
-            transition: all 0.3s var(--timing-function);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--text-dark);
-            border-color: var(--text-dark);
-            color: var(--white);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-icons a {
-            color: var(--text-light);
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s var(--timing-function);
-        }
-
-        .social-icons a:hover {
-            color: var(--white);
-            background-color: var(--primary-color);
-        }
-
-        /* --- 4. Common Section Styles --- */
-        .common-section {
-            padding: 5rem 0;
-        }
-
-        .common-section h3, .common-section h4 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .common-section h3::after, .common-section h4::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
-        }
-
-        .about-paragraph {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: justify;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* --- 5. Projects Section --- */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s var(--timing-function), box-shadow 0.3s var(--timing-function);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image-wrapper {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-            background-color: var(--secondary-color); /* Add background for placeholder */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--primary-color);
-            font-size: 1rem;
-            padding: 1rem;
-        }
-
-        .project-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(37, 99, 235, 0.85); /* Primary color with transparency */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s var(--timing-function);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .overlay-icon {
-            color: var(--white);
-            border: 2px solid var(--white);
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h4 {
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
-            text-align: left;
-        }
-
-        .project-content p {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-content ul {
-            margin-left: 1.25rem;
-            list-style: disc;
-            margin-bottom: 1rem;
-        }
-
-        .project-content li {
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-            color: var(--text-light);
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-tags span {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.75rem;
-            border-radius: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .project-links a {
-            margin-right: 1rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* --- 6. Skills Section --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        .skill-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            transition: all 0.3s var(--timing-function);
-        }
-
-        .skill-card:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--primary-color);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
-        }
-
-        .skill-icon-wrapper {
-            margin-bottom: 0.75rem;
-            color: var(--primary-color);
-        }
-
-        .skill-icon {
-            width: 2rem;
-            height: 2rem;
-        }
-
-        .skill-card h5 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .skill-card p {
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        /* --- 7. Certifications Section --- */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .cert-card {
-            display: flex;
-            align-items: center;
-            background-color: var(--background-light);
-            border-left: 5px solid var(--primary-color);
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .cert-icon-wrapper {
-            margin-right: 1rem;
-            color: var(--primary-color);
-        }
-
-        .cert-icon {
-            width: 2rem;
-            height: 2rem;
-        }
-
-        .cert-content h5 {
-            font-size: 1.05rem;
-            margin-bottom: 0.1rem;
-        }
-
-        .cert-content p {
-            font-size: 0.9rem;
-        }
-
-        /* --- 8. Education and Journey Sections (Timeline Style) --- */
-        .journey-item, .education-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .journey-item h5 {
-            font-size: 1.35rem;
-            text-align: left;
-            margin-bottom: 0.25rem;
-        }
-
-        .journey-item .meta {
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .journey-item ul {
-            list-style: disc;
-            padding-left: 1.25rem;
-        }
-
-        .journey-item li {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        /* Education Timeline Specifics */
-        .education-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 1.1rem;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--border-color);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 0;
-            top: 0.25rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            z-index: 1;
-            transform: translateX(-50%);
-        }
-
-        .timeline-content {
-            margin-left: 1.5rem;
-        }
-
-        .timeline-content h5 {
-            font-size: 1.25rem;
-            text-align: left;
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-content .meta {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-
-        /* --- 9. Contact Section --- */
-        .contact-section {
-            background-color: var(--background-light);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .contact-subtitle {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem 1rem 0.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            background-color: var(--white);
-            color: var(--text-dark);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-        }
-
-        .form-label {
-            position: absolute;
-            top: 0.25rem;
-            left: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            transition: all 0.2s ease-out;
-        }
-
-        .form-input:placeholder-shown ~ .form-label {
-            opacity: 0;
-        }
-
-        /* Ensure label is visible for non-empty or focused fields */
-        .form-input:not(:placeholder-shown) ~ .form-label,
-        .form-input:focus ~ .form-label {
-            top: 0.25rem;
-            left: 1rem;
-            font-size: 0.8rem;
-            color: var(--primary-color);
-            opacity: 1;
-        }
-
-        textarea.form-input {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form .btn-primary {
-            width: 100%;
-        }
-
-        /* --- 10. Footer --- */
-        .footer {
-            background-color: var(--text-dark);
-            color: var(--border-color);
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* --- 11. Media Queries for Responsiveness --- */
         @media (max-width: 768px) {
-            .header .container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .nav-list {
-                margin-top: 1rem;
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-section {
-                padding: 4rem 0;
-            }
-            
-            .hero-title {
-                font-size: clamp(2rem, 10vw, 3.5rem);
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-
-            .common-section {
-                padding: 3rem 0;
-            }
-            
-            .common-section h3, .common-section h4 {
-                margin-bottom: 2rem;
-                font-size: 1.75rem;
-            }
-
-            .project-grid, .skills-grid, .cert-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .education-timeline::before {
-                left: 0.5rem;
-            }
-
-            .timeline-dot {
-                left: 0.5rem;
-            }
-
-            .timeline-content {
-                margin-left: 2rem;
-            }
+            .nav-list { display: none; } /* Mobile nav could be added here */
+            .hero-title { font-size: 3rem; }
         }
     </style>
 </head>
@@ -662,14 +127,13 @@
 
     <header class="header">
         <div class="container">
-            <a href="#home" class="logo">Yesaswi Narayani.P</a>
+            <a href="#home" class="logo">Yesaswi Narayani</a>
             <nav>
                 <ul class="nav-list">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#journey">Experience</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -678,104 +142,92 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero-section">
-            <div class="hero-content">
+            <div class="hero-content container">
                 <h2 class="hero-title">
                     <span>YESASWI</span>
                     <span>NARAYANI</span>
                 </h2>
-                <p class="tagline">#CyberSecurity #FullStackDevelopment #AIEnthusiast</p>
+                <p class="tagline">Associate Full Stack Developer | AI & NLP Specialist | Python Developer</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="Yesaswi_Resume_Updated.pdf" download class="btn btn-secondary">Download Resume</a>
+                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                    <a href="#" class="btn btn-secondary">Download CV</a>
                 </div>
                 <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
-                    <a href="mailto:yesaswi1109@gmail.com" aria-label="Email"><i data-feather="mail"></i></a>
-                    <a href="tel:7305886680" aria-label="Phone"><i data-feather="phone"></i></a>
+                    <a href="https://linkedin.com/in/yesaswi" target="_blank"><i data-feather="linkedin"></i></a>
+                    <a href="https://github.com/yesaswi" target="_blank"><i data-feather="github"></i></a>
+                    <a href="mailto:yesaswill09@gmail.com"><i data-feather="mail"></i></a>
                 </div>
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="common-section">
             <div class="container">
                 <h3>About Me</h3>
                 <p class="about-paragraph">
-                    Innovative and solution-driven final year student in Computer Science & Engineering with a strong foundation in programming and software development. Proficient in Python, C, SQL, and modern web frameworks like Next.js and Typescript. Adept at problem-solving, exploring new ideas, and leveraging a solid understanding of fundamental concepts to drive technological advancement. Enthusiastic about cybersecurity, proven by experience in vulnerability assessments, penetration testing, and incident response protocols.
+                    I am a final-year Computer Science student at Raghu Institute of Technology, specializing in building scalable microservices and resilient full-stack architectures[cite: 3]. With a strong focus on Python, React, and TypeScript, I bridge the gap between complex backend logic and intuitive frontend experiences[cite: 3]. I am passionate about AI/ML, specifically Large Language Models (LLMs) and Natural Language Processing (NLP)[cite: 3].
                 </p>
             </div>
         </section>
-        
-        <section id="journey" class="common-section">
+
+        <!-- Experience Section -->
+        <section id="experience" class="common-section" style="background: var(--background-light);">
             <div class="container">
-                <h4>Professional Journey 💼</h4>
-                <div class="journey-items">
-                    <div class="journey-item">
-                        <h5>Cyber Security Virtual Internship - Eduskills</h5>
-                        <p class="meta">Oct 2024 - Dec 2024</p>
+                <h4>Professional Experience</h4>
+                <div class="journey-container">
+                    <div class="journey-card">
+                        <h5>Full Stack & Data Analytics Intern</h5>
+                        <span class="meta">Code Technologies | Jan 2025 - Mar 2025</span>
                         <ul>
-                            <li>Conducted comprehensive vulnerability assessments to identify security gaps and implemented remediation strategies.</li>
-                            <li>Executed penetration testing to assess system resilience and enhance defensive cybersecurity measures.</li>
-                            <li>Strengthened knowledge of incident response protocols by analyzing real-world attack scenarios and deploying countermeasures.</li>
-                            <li>Contributed to a red team exercise, successfully bypassing simulated defense to uncover critical vulnerabilities, leading to a 20% improvement in network security protocols.</li>
+                            <li>Collaborated with senior developers to deliver scalable data pipelines meeting business requirements[cite: 3].</li>
+                            <li>Built RESTful API integrations and Power BI dashboards, reducing manual reporting by ~40%[cite: 3].</li>
+                            <li>Enforced best practices across a 3-member team within Agile sprint cycles[cite: 3].</li>
+                        </ul>
+                    </div>
+                    <div class="journey-card">
+                        <h5>Cybersecurity Intern</h5>
+                        <span class="meta">EduSkills | Oct 2024 - Dec 2024</span>
+                        <ul>
+                            <li>Conducted vulnerability assessments and security remediations ensuring code quality and compliance[cite: 3].</li>
+                            <li>Mentored junior interns on security tooling and methodologies[cite: 3].</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="common-section projects-section">
+        <!-- Projects Section -->
+        <section id="projects" class="common-section">
             <div class="container">
-                <h3>Featured Projects ✨</h3>
+                <h3>Featured Projects</h3>
                 <div class="project-grid">
+                    <!-- Bookmood -->
                     <div class="project-card">
-                        <div class="project-image-wrapper">
-                            Bookmood Project Preview (NLP/Next.js)
-                            <div class="project-overlay">
-                                <a href="#" class="overlay-icon" aria-label="View Project"><i data-feather="link"></i></a>
-                            </div>
-                        </div>
                         <div class="project-content">
-                            <h4>Bookmood: AI-Powered Book Recommendation Platform</h4>
-                            <p class="project-desc">
-                                A full-stack web application developed using Next.js and Typescript to provide book recommendations based on user mood analysis.
-                            </p>
+                            <h4>Bookmood: AI Book Platform</h4>
+                            <p>An agentic microservices pipeline using NLP-driven parsing and semantic modeling for personalized book recommendations[cite: 3].</p>
                             <ul>
-                                <li>Created a custom NLP engine to process user input and a recommendation algorithm.</li>
-                                <li>Designed and implemented a responsive, interactive user interface.</li>
+                                <li>Implemented RAG using LangChain for context synthesis[cite: 3].</li>
+                                <li>APIs handled 500+ daily requests with 99% uptime[cite: 3].</li>
                             </ul>
                             <div class="tech-tags">
-                                <span>Next.js</span><span>Typescript</span><span>NLP</span><span>Backend Development</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#">Live Demo</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">View in GitHub</a>
+                                <span>Next.js</span><span>FastAPI</span><span>LangChain</span><span>NLP</span><span>TypeScript</span>
                             </div>
                         </div>
                     </div>
+                    <!-- SkinSight -->
                     <div class="project-card">
-                        <div class="project-image-wrapper">
-                            Harry Potter Quiz Preview (Python/Pygame)
-                            <div class="project-overlay">
-                                <a href="#" class="overlay-icon" aria-label="View Project"><i data-feather="link"></i></a>
-                            </div>
-                        </div>
                         <div class="project-content">
-                            <h4>Harry Potter Trivia Quiz Game</h4>
-                            <p class="project-desc">
-                                An interactive quiz game developed using Python, featuring multiple-choice questions on Harry Potter lore.
-                            </p>
+                            <h4>SkinSight: Healthcare DL Platform</h4>
+                            <p>Lead end-to-end design of a skin cancer detection system achieving 92% classification accuracy[cite: 3].</p>
                             <ul>
-                                <li>Implemented game logic to track user scores and manage question flow.</li>
-                                <li>Utilized JSON files to dynamically load questions and save high scores.</li>
+                                <li>Fine-tuned MobileNet V2 on a dataset of 10,000 images[cite: 3].</li>
+                                <li>Built a scalable RESTful API with rate limiting and input validation[cite: 3].</li>
                             </ul>
                             <div class="tech-tags">
-                                <span>Python</span><span>Pygame</span><span>JSON</span><span>Game Logic</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#">Live Demo</a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">View in GitHub</a>
+                                <span>PyTorch</span><span>React</span><span>FastAPI</span><span>MobileNet V2</span><span>Agile</span>
                             </div>
                         </div>
                     </div>
@@ -783,106 +235,50 @@
             </div>
         </section>
 
-        <section id="skills" class="common-section skills-section">
+        <!-- Skills Section -->
+        <section id="skills" class="common-section" style="background: var(--background-light);">
             <div class="container">
-                <h3>My Key Skills 🛠️</h3>
+                <h3>Technical Arsenal</h3>
                 <div class="skills-grid">
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="code" class="skill-icon"></i></div><h5>Python | C | JavaScript</h5><p>Proficient in foundational and object-oriented programming.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="terminal" class="skill-icon"></i></div><h5>Bash | Scripting</h5><p>Competent in automation and command-line interfaces.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="lock" class="skill-icon"></i></div><h5>Cybersecurity | Cryptography</h5><p>Experience with pentesting, vulnerability assessment, and security principles.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="cloud" class="skill-icon"></i></div><h5>AWS | Cloud</h5><p>Familiar with Amazon Web Services and cloud fundamentals.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="database" class="skill-icon"></i></div><h5>SQL | Backend Dev</h5><p>Experienced in database querying and backend implementation (FastAPI, NodeJS).</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="cpu" class="skill-icon"></i></div><h5>NLP | Pytorch</h5><p>Experience with Natural Language Processing and Deep Learning framework.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="git-branch" class="skill-icon"></i></div><h5>Git | GitHub Actions</h5><p>Experienced in version control and automation workflows.</p></div>
-                    <div class="skill-card"><div class="skill-icon-wrapper"><i data-feather="users" class="skill-icon"></i></div><h5>Leadership | Teamwork</h5><p>Strong soft skills including Problem Solving, Adaptability, and Project Management.</p></div>
+                    <div class="skill-item"><i data-feather="code"></i><h5>Languages</h5><p>Python, TypeScript, JavaScript, SQL, C, Java[cite: 3]</p></div>
+                    <div class="skill-item"><i data-feather="cpu"></i><h5>AI & NLP</h5><p>LLMs, LangChain, RAG, PyTorch, Transformers[cite: 3]</p></div>
+                    <div class="skill-item"><i data-feather="layers"></i><h5>Frameworks</h5><p>FastAPI, React, Next.js, Node.js, Microservices[cite: 3]</p></div>
+                    <div class="skill-item"><i data-feather="cloud"></i><h5>Cloud/DevOps</h5><p>AWS (S3, Lambda, EC2), Docker, GitHub Actions[cite: 3]</p></div>
                 </div>
             </div>
         </section>
 
-        <section id="certifications" class="common-section certifications-section">
-            <div class="container">
-                <h3>Certifications 🏅</h3>
-                <div class="cert-grid">
-                    <div class="cert-card">
-                        <div class="cert-icon-wrapper"><i data-feather="cloud-lightning" class="cert-icon"></i></div>
-                        <div class="cert-content">
-                            <h5>AWS Cloud Foundations</h5>
-                            <p>AWS Academy</p>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon-wrapper"><i data-feather="message-square" class="cert-icon"></i></div>
-                        <div class="cert-content">
-                            <h5>Introduction to Natural Language Processing (NLP)</h5>
-                            <p>Great Learning</p>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-icon-wrapper"><i data-feather="cpu" class="cert-icon"></i></div>
-                        <div class="cert-content">
-                            <h5>Accenture Software Engineering Virtual Experience Program</h5>
-                            <p>Forage</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Education Section -->
         <section id="education" class="common-section">
             <div class="container">
-                <h4>Education Timeline 🎓</h4>
-                <div class="education-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h5>Bachelor of Technology - Computer Science & Engineering</h5>
-                            <p class="meta">Raghu Institute of Technology, Visakhapatnam | Jun 2022 - April 2026</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h5>Board of Intermediate Education - MPC</h5>
-                            <p class="meta">Apex Junior College, Vizianagaram | July 2020 - May 2022</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h5>CBSE (Central Board of Secondary Education)</h5>
-                            <p class="meta">Sister Stanislas Memorial English medium School, Kurnool | July 2019 - March 2020</p>
-                        </div>
+                <h3>Education</h3>
+                <div class="journey-container">
+                    <div class="journey-card" style="border-left-color: #10B981;">
+                        <h5>B.Tech in Computer Science</h5>
+                        <span class="meta">Raghu Institute of Technology | 2022 - 2026</span>
+                        <p><strong>CGPA: 8.12 / 10</strong></p>
+                        <p>Relevant Coursework: DSA, OS, Software Engineering, DBMS[cite: 3]</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="common-section contact-section">
-            <div class="container">
-                <h3>Get In Touch 👋</h3>
-                <p class="contact-subtitle">Have a question or want to work together? Let's connect.</p>
-                <form action="#" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
-                        <label for="name" class="form-label">Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" class="form-input" placeholder=" " value="yesaswi1109@gmail.com" required>
-                        <label for="email" class="form-label">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" class="form-input" placeholder=" " required></textarea>
-                        <label for="message" class="form-label">Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+        <!-- Contact Section -->
+        <section id="contact" class="common-section" style="background: var(--text-dark); color: white;">
+            <div class="container" style="text-align: center;">
+                <h3 style="color: white;">Let's Connect</h3>
+                <p style="margin-bottom: 2rem;">Seeking opportunities to contribute to high-performing enterprise solutions.</p>
+                <div class="hero-buttons">
+                    <a href="mailto:yesaswill09@gmail.com" class="btn btn-primary">Send Email</a>
+                    <a href="https://linkedin.com/in/yesaswi" class="btn btn-secondary" style="border-color: white; color: white;">LinkedIn</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Yesaswi Narayani. All Rights Reserved.</p>
+            <p>&copy; 2026 Yesaswi Narayani. Built with Passion & Code.</p>
         </div>
     </footer>
 

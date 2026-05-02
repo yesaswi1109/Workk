@@ -12,13 +12,13 @@
     <style>
         /* --- 1. Global Styles and Reset --- */
         :root {
-            --primary-color: #2563EB; /* Blue-600 */
-            --secondary-color: #E0F2FE; /* Blue-50 */
-            --text-dark: #1E293B; /* Slate-800 */
-            --text-light: #475569; /* Slate-600 */
-            --background-light: #F8FAFC; /* Slate-50 */
+            --primary-color: #2563EB;
+            --secondary-color: #E0F2FE;
+            --text-dark: #1E293B;
+            --text-light: #475569;
+            --background-light: #F8FAFC;
             --white: #FFFFFF;
-            --border-color: #E2E8F0; /* Slate-200 */
+            --border-color: #E2E8F0;
             --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -90,17 +90,7 @@
 
         .about-paragraph { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem; line-height: 1.8; }
 
-        /* Projects */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
-        .project-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 1rem; overflow: hidden; transition: 0.3s; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .project-content { padding: 2rem; }
-        .project-content h4 { text-align: left; font-size: 1.4rem; margin-bottom: 1rem; }
-        .project-content h4::after { display: none; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
-        .tech-tags span { background: var(--secondary-color); color: var(--primary-color); padding: 0.35rem 0.8rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; }
-
-        /* Journey/Experience */
+        /* Journey/Experience Cards */
         .journey-container { max-width: 900px; margin: 0 auto; }
         .journey-card { background: var(--background-light); padding: 2rem; border-radius: 1rem; border-left: 6px solid var(--primary-color); margin-bottom: 2rem; }
         .journey-card h5 { font-size: 1.3rem; }
@@ -108,10 +98,10 @@
         .journey-card ul { list-style: disc; padding-left: 1.5rem; }
         .journey-card li { margin-bottom: 0.75rem; }
 
-        /* Skills & Certs Grid */
+        /* Grid Layouts for Skills & Certs */
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .grid-item { background: var(--white); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 0.75rem; transition: 0.3s; display: flex; align-items: flex-start; gap: 1rem; }
-        .grid-item:hover { border-color: var(--primary-color); background: var(--secondary-color); }
+        .grid-item:hover { border-color: var(--primary-color); background: var(--secondary-color); transform: translateY(-5px); }
         .grid-item i { color: var(--primary-color); flex-shrink: 0; }
 
         /* Footer */
@@ -132,7 +122,6 @@
                 <ul class="nav-list">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certs</a></li>
                     <li><a href="#education">Education</a></li>
@@ -149,13 +138,13 @@
                     <span>YESASWI</span>
                     <span>NARAYANI</span>
                 </h2>
-                <p class="tagline">Associate Full Stack Developer | AI & NLP Specialist | Python Enthusiast</p>
+                <p class="tagline">Full Stack Developer | Python Specialist | AI Enthusiast</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">My Work</a>
-                    <a href="#" class="btn btn-secondary">Resume</a>
+                    <a href="https://github.com/yesaswi1109" class="btn btn-primary" target="_blank">View GitHub</a>
+                    <a href="https://www.linkedin.com/in/yesaswi-narayani-pakalapati-016b20296/" class="btn btn-secondary" target="_blank">LinkedIn</a>
                 </div>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/yesaswi-narayani-pakalapati-016b20296/" target="_blank"><i data-feather="linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/yesaswi-narayani-pakalapati-016b20296/" target="_blank"><i data-feather="linkedin"></i></a>
                     <a href="https://github.com/yesaswi1109" target="_blank"><i data-feather="github"></i></a>
                     <a href="mailto:yesaswill09@gmail.com"><i data-feather="mail"></i></a>
                 </div>
@@ -167,7 +156,7 @@
             <div class="container">
                 <h3>About Me</h3>
                 <p class="about-paragraph">
-                    Final-year Computer Science student at Raghu Institute of Technology, specializing in building scalable microservices and production-ready full-stack solutions[cite: 3]. Proficient in Python, React, and TypeScript with a core focus on AI/ML and NLP technologies[cite: 3].
+                    Final-year Computer Science student at Raghu Institute of Technology, specializing in building scalable microservices and production-ready full-stack solutions[cite: 3]. I have hands-on experience in Python, React, and TypeScript, with a deep interest in AI/ML and NLP technologies[cite: 3].
                 </p>
             </div>
         </section>
@@ -175,15 +164,15 @@
         <!-- Experience Section -->
         <section id="experience" class="common-section" style="background: var(--background-light);">
             <div class="container">
-                <h4>Experience</h4>
+                <h4>Professional Experience</h4>
                 <div class="journey-container">
                     <div class="journey-card">
                         <h5>Full Stack & Data Analytics Intern</h5>
                         <span class="meta">Code Technologies | Jan 2025 - Mar 2025</span>
                         <ul>
-                            <li>Collaborated with senior developers to deliver scalable data pipelines[cite: 3].</li>
+                            <li>Delivered scalable data pipelines meeting business requirements[cite: 3].</li>
                             <li>Built RESTful API integrations and Power BI dashboards, reducing reporting time by 40%[cite: 3].</li>
-                            <li>Owned sprint demos and presented KPIs to business owners[cite: 3].</li>
+                            <li>Presented KPIs to business owners during sprint demos[cite: 3].</li>
                         </ul>
                     </div>
                     <div class="journey-card">
@@ -191,42 +180,15 @@
                         <span class="meta">EduSkills | Oct 2024 - Dec 2024</span>
                         <ul>
                             <li>Conducted vulnerability assessments and security remediations[cite: 3].</li>
-                            <li>Mentored junior interns on security tooling and methodologies[cite: 3].</li>
+                            <li>Mentored junior interns on industry best practices and security tooling[cite: 3].</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="common-section">
-            <div class="container">
-                <h3>Featured Projects</h3>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>Bookmood: AI Book Platform</h4>
-                            <p>Agentic microservices pipeline using NLP-driven parsing for personalized recommendations[cite: 3].</p>
-                            <div class="tech-tags">
-                                <span>Next.js</span><span>FastAPI</span><span>LangChain</span><span>NLP</span><span>TypeScript</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>SkinSight: Healthcare DL Platform</h4>
-                            <p>Skin cancer detection system achieving 92% accuracy using fine-tuned MobileNet V2[cite: 3].</p>
-                            <div class="tech-tags">
-                                <span>PyTorch</span><span>React</span><span>FastAPI</span><span>MobileNet V2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Skills Section -->
-        <section id="skills" class="common-section" style="background: var(--background-light);">
+        <section id="skills" class="common-section">
             <div class="container">
                 <h3>Technical Arsenal</h3>
                 <div class="grid-layout">
@@ -239,7 +201,7 @@
         </section>
 
         <!-- Certifications Section -->
-        <section id="certifications" class="common-section">
+        <section id="certifications" class="common-section" style="background: var(--background-light);">
             <div class="container">
                 <h3>Certifications</h3>
                 <div class="grid-layout">
@@ -251,7 +213,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="common-section" style="background: var(--background-light);">
+        <section id="education" class="common-section">
             <div class="container">
                 <h3>Education</h3>
                 <div class="journey-container">
@@ -259,7 +221,7 @@
                         <h5>B.Tech in Computer Science</h5>
                         <span class="meta">Raghu Institute of Technology | 2022 - 2026</span>
                         <p><strong>CGPA: 8.12 / 10</strong></p>
-                        <p>Focus: DSA, OS, Software Engineering, DBMS[cite: 3]</p>
+                        <p>Core Coursework: DSA, OS, Software Engineering, DBMS[cite: 3]</p>
                     </div>
                 </div>
             </div>
@@ -268,7 +230,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Yesaswi Narayani. Built with Passion & Code.</p>
+            <p>&copy; 2026 Yesaswi Narayani. All Rights Reserved.</p>
         </div>
     </footer>
 
